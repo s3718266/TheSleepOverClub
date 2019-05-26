@@ -1,6 +1,7 @@
 package productInfo;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import javax.swing.JOptionPane;
@@ -25,7 +26,18 @@ public class ProductInfo {
 	 products.add("Milk");
 	 products.add("Bread");
 	 products.add("Cheese");
-	    
+	 
+	 List<String> milk = new ArrayList<>();
+	 milk.add("001");
+	 milk.add("Milk");
+	 milk.add("Moo Farms");
+	 
+	 //Integer c[] = new Integer [] {1,2,3};
+	 
+	 //List<Integer> = list Arrays.asList(c); 
+	 
+	 //List<costs> list = new ArrayList<>(costs.asList(1, 2, 3));
+			 
 	 for (String i : products) {
 		 JOptionPane.showMessageDialog(null,i);
 	    }
@@ -34,50 +46,19 @@ public class ProductInfo {
 		if (prodSelect.contains("Milk")) {
 			JOptionPane.showMessageDialog(null, "milk costs $3");
 			JOptionPane.showInputDialog("Milk costs $3. Would you like to buy Milk?");
+		}
+			else {
+				if (prodSelect.contains("Bread")) {
+					JOptionPane.showInputDialog("bread costs $2. Would you like to buy bread?");
+			}
+				else {
+					if (prodSelect.contains("cheese")) {
+						JOptionPane.showInputDialog("cheese costs $5. Would you like to buy cheese?");
+				}
 		      }
-	 }
-/*		else {
-			if (prodSelect.contains("Bread")) {
-			      System.out.println("bread costs $2");
-		}
-		}
-			
-		else {
-				if (prodSelect.contains("Cheese")) {
-				      System.out.println("cheese costs $5");
 			}
-				
-			}
-		}*/
-
-	 
 		
-	
-
-
-	public int getProductID() {
-		return this.productID;
-	}
-	
-	public String prodName() {
-		return this.prodName;
-	}
-	
-	public double price() {
-		return this.price;
-	}	
-	
-	public double cost() {
-		return this.cost;
-	}	
-	
-	public String prodDescript() {
-		return this.prodDescript;
-	}
-	
-	public String Stock() {
-		return this.Stock;
-	}
+	 }
 	
 	
 }
