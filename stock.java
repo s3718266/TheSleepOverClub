@@ -2,6 +2,8 @@ package productInfo;
 
 import java.util.Scanner;
 
+import javax.swing.JOptionPane;
+
 
 public class StockCount {
 	
@@ -54,31 +56,43 @@ public class StockCount {
 		    	
 		        Scanner b = new Scanner(System.in);
 
-		        int currentStock;
+		        int currentStock = 0;
+		        do {
 		        System.out.print("Enter current stock: ");
-		        while (true)
+		        }
+		        while (currentStock > 5); {
 		            try {
 		            	currentStock = Integer.parseInt(b.nextLine());
-		                break;
+		               /* break;*/
 		            } catch (NumberFormatException nfe) {
 		                System.err.println("Invalid input! Please enter again: ");
 		                System.err.println("NumberFormationException");
 		            }
-
-		        int stocklevelreminder = 0;
-		        do {
-		            System.out.println("Low stock remider at: " + stocklevelreminder + " unit/s");
+		        
+		       /* else {
+		        	System.out.println("Low Stock! Please order stock");
+		        
+		        }*/
+		        }
+		        
+	
+		        
+		        int order;
+		            System.out.println("How much stock would you like to order?");
 		            while (true)
 		                try {
-		                	stocklevelreminder = Integer.parseInt(b.nextLine());
+		                	order = Integer.parseInt(b.nextLine());
+		                	currentStock = order + currentStock;
 		                    break;
 		                } catch (NumberFormatException nfe) {
 		                    System.err.println("Invalid input! Please enter again: ");
 		                    System.err.println("NumberFormationException");
 		                }
-		        } while (currentStock < stocklevelreminder);//keep looping until current stock is bigger then low stock warning
+		        
+		        System.out.println("New current stock:" + currentStock);
+		        
+	}
+		        
 
-		        System.out.println("Low Stock! Please order stock and enter new current stock count");
+		        
 		    }
-
-}
